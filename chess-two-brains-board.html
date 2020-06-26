@@ -1,0 +1,124 @@
+<!DOCTYPE HTML >
+<html lang="pl">
+<head>
+         <meta charset="utf-8"/>
+         <title>chess-board</title>
+         <link rel ="stylesheet" href="chess-two-brains-style.css">
+         <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+   </head>
+   <body>
+     <header>
+     <h1>Chess. A play for two brains</h1>
+     </header>
+     <main>
+
+             <article>
+					
+					
+                    <div id="board" >
+
+
+                            <div class="field0">8</div>
+                            <div class="fieldB" id="a8"> <i class= 'fas fa-chess-rook'    id='rB1' style='font-size:58px;color:black'></i> </div>
+                           <div class = "fieldW" id ="b8"><i class= 'fas fa-chess-knight' id='kB1' style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldB" id ="c8"><i class= 'fas fa-chess-bishop' id='bB1' style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldW" id ="d8"><i class= 'fas fa-chess-king'   id='KB1' style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldB" id ="e8"><i class= 'fas fa-chess-queen'  id='qB1' style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldW" id ="f8"><i class= 'fas fa-chess-bishop' id='bB2' style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldB" id ="g8"><i class= 'fas fa-chess-knight' id='kB2' style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldW" id ="h8"><i class= 'fas fa-chess-rook'   id='rB2' style='font-size:58px;color:black'></i></div>
+                          <div style='clear:left'> </div>
+                           <div class="field0">7</div>
+                           <div class="fieldW" id="a7"><i class= 'fas fa-chess-pawn'    id='pB1' style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldB" id ="b7"><i class= 'fas fa-chess-pawn' id='pB2' style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldW" id ="c7"><i class= 'fas fa-chess-pawn' id='pB3' style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldB" id ="d7"><i class= 'fas fa-chess-pawn' id='pB4'style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldW" id ="e7"><i class= 'fas fa-chess-pawn' id='pB5'style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldB" id ="f7"><i class= 'fas fa-chess-pawn' id='pB6'style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldW" id ="g7"><i class= 'fas fa-chess-pawn' id='pB7'style='font-size:58px;color:black'></i></div>
+                           <div class = "fieldB" id ="h7"><i class= 'fas fa-chess-pawn' id='pB8'style='font-size:58px;color:black'></i></div>
+                         <div style='clear:left'> </div>
+                          <div class="field0">6</div>
+                           <div class="fieldB" id="a6"> </div>
+                           <div class = "fieldW" id ="b6"></div>
+                           <div class = "fieldB" id ="c6"></div>
+                           <div class = "fieldW" id ="d6"></div>
+                           <div class = "fieldB" id ="e6"></div>
+                           <div class = "fieldW" id ="f6"></div>
+                           <div class = "fieldB" id ="g6"></div>
+                           <div class = "fieldW" id ="h6"></div>
+                           <div style=clear:left> </div>
+                            <div class="field0">5</div>
+                           <div class="fieldW" id="a5"> </div>
+                           <div class = "fieldB" id ="b5"></div>
+                           <div class = "fieldW" id ="c5"></div>
+                           <div class = "fieldB" id ="d5"></div>
+                           <div class = "fieldW" id ="e5"></div>
+                           <div class = "fieldB" id ="f5"></div>
+                           <div class = "fieldW" id ="g5"></div>
+                           <div class = "fieldB" id ="h5"></div>
+                           <div style=clear:left> </div>
+                            <div class="field0">4</div>
+                           <div class="fieldB" id="a4"> </div>
+                           <div class = "fieldW" id ="b4"></div>
+                           <div class = "fieldB" id ="c4"></div>
+                           <div class = "fieldW" id ="d4"></div>
+                           <div class = "fieldB" id ="e4"></div>
+                           <div class = "fieldW" id ="f4"></div>
+                           <div class = "fieldB" id ="g4"></div>
+                           <div class = "fieldW" id ="h4"></div>
+                           <div style=clear:left></div>
+                         <div class="field0">3</div>
+                           <div class="fieldW" id="a3"> </div>
+                           <div class = "fieldB" id ="b3"></div>
+                           <div class = "fieldW" id ="c3"></div>
+                           <div class = "fieldB" id ="d3"></div>
+                           <div class = "fieldW" id ="e3"></div>
+                           <div class = "fieldB" id ="f3"></div>
+                           <div class = "fieldW" id ="g3"></div>
+                           <div class = "fieldB" id ="h3"></div>
+                           <div style=clear:left> </div>
+                            <div class="field0">2</div>
+                            <div class="fieldB" id="a2"><i class= 'fas fa-chess-pawn'   id='pW1' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldW" id ="b2"><i class= 'fas fa-chess-pawn' id='pW2' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldB" id ="c2"><i class= 'fas fa-chess-pawn' id='pW3' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldW" id ="d2"><i class= 'fas fa-chess-pawn' id='pW4' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldB" id ="e2"><i class= 'fas fa-chess-pawn' id='pW5' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldW" id ="f2"><i class= 'fas fa-chess-pawn' id='pW6' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldB" id ="g2"><i class= 'fas fa-chess-pawn' id='pW7' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldW" id ="h2"><i class= 'fas fa-chess-pawn' id='pW8' style='font-size:58px;color:white'></i></div>
+                           <div style=clear:left> </div>
+                           <div class="field0">1</div>
+                           <div class="fieldW" id="a1"><i class= 'fas fa-chess-rook'       id='rW1' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldB" id ="b1"><i class= 'fas fa-chess-knight'  id='kW1' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldW" id ="c1"><i class= 'fas fa-chess-bishop'  id='bW1' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldB" id ="d1"><i class= 'fas fa-chess-king'    id='KW1' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldW" id ="e1"><i class= 'fas fa-chess-queen'   id='qW1' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldB" id ="f1"><i class= 'fas fa-chess-bishop'  id='bW2' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldW" id ="g1"><i class= 'fas fa-chess-knight'  id='kW2' style='font-size:58px;color:white'></i></div>
+                           <div class = "fieldB" id ="h1"><i class= 'fas fa-chess-rook'    id='rW2' style='font-size:58px;color:white'></i></div>
+                           <div style='clear:left'> </div>
+
+                           <div class="field0"></div>
+                            <div class="field0">a</div>
+                            <div class="field0">b</div>
+                            <div class="field0">c</div>
+                            <div class="field0">d</div>
+                            <div class="field0">e</div>
+                            <div class="field0">f</div>
+                            <div class="field0">g</div>
+                            <div class="field0">h</div>
+
+                  </div>
+				  
+		  
+			</article>
+	</main>
+	<script src = "jquery-3.4.1.min.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link href="https://fonts.googleapis.com/css?family=Jim+Nightshade&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jim+Nightshade|Passion+One&display=swap" rel="stylesheet">
+  	<script src="chess-two-brains.js"></script>
+  </body>
+</html>
