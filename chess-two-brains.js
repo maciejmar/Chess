@@ -276,14 +276,16 @@ for (var i = 0; i < buttons.length; i++) {
 					//$('movesList').text(`examFrom : exam`); 
 
 
-						if (objexam.id[0] == 'K') king.xy = exam;
+						//if (objexam.id[0] == 'K') king.xy = exam;
 						if (king.checkedK) {
 							if (ifMate(king) && chekingFigNotToBeat(checkingFig)) {
 
 								$('h1').text("Chess. A play for two brains. Check Mate!!!");
 								validation = false;
-								sleep(4000);
-								location.reload();
+								
+								
+								//sleep(4000);
+								//location.reload();
 							}
 						}	
 				
@@ -355,13 +357,16 @@ for (var i = 0; i < buttons.length; i++) {
 function chekingFigNotToBeat(checkingFig) {
 
     var fig = new Figure;
+	var xyz = [];
 
     for (var i = 0; i < Object.keys(figs).length; i++) {
-        fig = figs[i];
-        fig.xy[0] = checkingFig[0];
-        fig.xy[1] = checkingFig[1];
+	    xyz[0] = figs[i].xy[0];
+	    xyz[1] = figs[i].xy[1];
+        fig = Object.assign({},figs[i]);
+        fig.xy[0] = checkingFig.xy[0];
+        fig.xy[1] = checkingFig.xy[1];
 
-        if (checkingFig.team != figs[i].team && validMoveNew(fig, figs[i].xy))
+        if (checkingFig.team != figs[i].team && validMoveNew(fig, xyz))
             return false;
 
     }
