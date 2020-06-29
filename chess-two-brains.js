@@ -281,7 +281,6 @@ for (var i = 0; i < buttons.length; i++) {
 							if (ifMate(king) && chekingFigNotToBeat(checkingFig)) {
 
 								$('h1').text("Chess. A play for two brains. Check Mate!!!");
-								validation = false;
 								
 								
 								//sleep(4000);
@@ -366,9 +365,13 @@ function chekingFigNotToBeat(checkingFig) {
         fig.xy[0] = checkingFig.xy[0];
         fig.xy[1] = checkingFig.xy[1];
 
-        if (checkingFig.team != figs[i].team && validMoveNew(fig, xyz))
-            return false;
-
+        if (checkingFig.team != figs[i].team && validMoveNew(fig, xyz)) {
+			figs[i].xy[0] = xyz[0];
+			figs[i].xy[1] = xyz[1];
+			return false;
+		}
+		figs[i].xy[0] = xyz[0];
+		figs[i].xy[1] = xyz[1];
     }
     return true;
 }
@@ -526,11 +529,11 @@ function dontGoBackPawn(objTeam, xy1, xy2) {
 }
 
 function ifChecked(figs, king) {
-    xy1 = king.xy;
-
+    var xy1 = king.xy;
+	var pom;
     for (var j = 0; j < Object.keys(figs).length; j++) {
         if (figs[j].team != king.team && figs[j].alive) {
-            var pom = figs[j].xy;
+            pom = figs[j].xy;
             figs[j].xy = king.xy;
 
             if (validMoveNew(figs[j], pom)) {
