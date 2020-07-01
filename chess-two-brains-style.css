@@ -3,12 +3,14 @@ body {
 }
 h1{
 	font-size:60px;
-	font-family: 'Trade Winds', ;
+	font-family: 'Saira Condensed', sans-serif;
 	margin-left:100px;
 }
 .board {
 	width:800px;
 	height:800px;
+	display:block-inline;
+	float:left;
 }
 .field0 {
 	width:100px;
@@ -51,6 +53,42 @@ h1{
 #options{
 width:400px;
 height:100px;
+}
+
+.moves{
+	width:100px;
+	height:865px;
+	background-color:#0080ff;
+	color:#FFD700;
+	position: absolute; top: 174px; left: 920px;
+	padding: 5px 5px 5px 5px;
+	letter-spacing: 3px;
+	font-weight:bold;
+	font-family: 'Saira Condensed', sans-serif;
+	display:block-inline;
+	float:left;
+	
+}
+#m2 {
+	width:100px;
+	height:865px;
+	background-color:#0080ff;
+	color:#FFD700;
+	position: absolute; top: 174px; left: 1042px;
+	padding: 5px 5px 5px 5px;
+	letter-spacing: 3px;
+	font-weight:bold;
+	font-family: 'Saira Condensed', sans-serif;
+	display:block-inline;
+	float:left;
+}
+
+moves >li {
+	width:100px;
+	height:20px;
+	font-weight:bold;
+	font-family: 'Saira Condensed', sans-serif;
+	position:relative;
 }
 
 .right-panel{

@@ -11,6 +11,7 @@ const BLACK = 1;
 const WHITE = 0;
 var checkingFig = null;
 var correctness = false;
+var listInBox="";
 $('#rB1').css('color', 'red');
 $('#kW1').css('color', 'green');
 
@@ -273,7 +274,26 @@ for (var i = 0; i < buttons.length; i++) {
 				}
 					movesObj[moves] = new Moves(moves, teams, 1, examFrom, exam); 
 					movesObj[moves].from = 1;
-					//$('movesList').text(`examFrom : exam`); 
+					if (moves<35) {
+					if (moves==1)  listInBox = "";
+					listInBox = listInBox.concat( "<li>"+isBlackOrWhite(moves)+": "+changeToId(examFrom)+":"+changeToId(exam)+"</li>");
+					var htmlMove = $.parseHTML(listInBox);
+					$('#m1').html(htmlMove);
+					}
+					else {
+						if(moves==35) listInBox = "";
+						
+					listInBox = listInBox.concat( "<li>"+isBlackOrWhite(moves)+": "+changeToId(examFrom)+":"+changeToId(exam)+"</li>");
+					var htmlMove = $.parseHTML(listInBox);
+						$('#m2').html(htmlMove);
+					}
+					
+					
+				
+					//for (var m=0;m<moves;m++) {
+					//let dispy=174+m*10;
+					//$('moves').html("<li>abacki ma macki</li>"); 
+					//}
 
 
 						//if (objexam.id[0] == 'K') king.xy = exam;
@@ -281,6 +301,7 @@ for (var i = 0; i < buttons.length; i++) {
 							if (ifMate(king) && chekingFigNotToBeat(checkingFig)) {
 
 								$('h1').text("Chess. A play for two brains. Check Mate!!!");
+								$('#options').innerHTML(`<div id="options"><input type="button" value="Play again - press F5. Abort - F10" onclick="location.reload()"></div>`);
 								
 								
 								//sleep(4000);
@@ -587,4 +608,9 @@ function sleep(milliseconds) {
     do {
         currentDate = Date.now();
     } while (currentDate - date < milliseconds);
+}
+
+function isBlackOrWhite(movesCount) {
+if (movesCount%2) return "W";
+else return "B";
 }
