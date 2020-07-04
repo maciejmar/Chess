@@ -254,7 +254,7 @@ for (var i = 0; i < buttons.length; i++) {
 
                 if (isOdd(moves)) {
                     teams = 0;
-                    $('h1').text("Chess. Blackes move");
+                    $('h1').text("Chess. A play for two brains. Blackes move");
                     if (ifChecked(figs, king)) {
 						king.checkedK = true;
                         $('h1').text("Chess. A play for two brains. Blackes move. Check!");
@@ -264,13 +264,17 @@ for (var i = 0; i < buttons.length; i++) {
                 } 
 				else {
                     teams = 1;
-                    $('h1').text("Chess. Whites move");
+                    $('h1').text("Chess. A play for two brains. Whites move");
                     if (ifChecked(figs, king)) {
 						king.checkedK = true;
                         $('h1').text("Chess. A play for two brains. Whites move. Check!");
                         
                     }
 					else king.checked = false;
+				}
+				
+				if(king.checked==false){
+					if (pat(king.team)) $('h1').text("Chess. A play for two brains. Pat!!!.") ;
 				}
 					movesObj[moves] = new Moves(moves, teams, 1, examFrom, exam); 
 					movesObj[moves].from = 1;
@@ -613,4 +617,31 @@ function sleep(milliseconds) {
 function isBlackOrWhite(movesCount) {
 if (movesCount%2) return "W";
 else return "B";
+}
+
+function pat(team) {
+	var xyz=[];
+	var figAbilityToMove = new Figure(blacks[1], 1, [0,0], false, true);
+	var xyt =[];
+	
+        
+	
+	for(var i=1;i<Object.keys(figs).length;i++) {
+		if (figs[i].team == team) { 
+		x = figs[i].xy[0];
+		y = figs[i].xy[1];
+		xyt = [x, y + 1, x + 1, y + 1, x + 1, y, x + 1, y - 1, x, y - 1, x - 1, y - 1, x - 1, y, x - 1, y + 1];
+		
+			for(var j = 0; j < 7; j++) {
+				if ((0 < xyt[2 * j] && xyt[2 * j] < 9) && (0 < xyt[2 * j + 1] && xyt[2 * j + 1] < 9)) {
+					figAbilityToMove.xy[0] = xyt[2 * j];
+					figAbilityToMove.xy[1] = xyt[2 * j + 1];				
+					figAbilityToMove.id = figs[i].id;
+					figAbilityToMove.team = figs[i].team;
+					if(ifMate(figAbilityToMove))return false;
+				}
+			}
+	    }
+	}
+	return true;	
 }
