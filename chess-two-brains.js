@@ -274,7 +274,7 @@ for (var i = 0; i < buttons.length; i++) {
 				}
 				
 				if(king.checked==false){
-					if (pat(king.team)) $('h1').text("Chess. A play for two brains. Pat!!!.") ;
+					if (pat(king.team) || pat(!king.team) $('h1').text("Chess. A play for two brains. Pat!!!.");
 				}
 					movesObj[moves] = new Moves(moves, teams, 1, examFrom, exam); 
 					movesObj[moves].from = 1;
