@@ -274,7 +274,7 @@ for (var i = 0; i < buttons.length; i++) {
 				}
 				
 				if(king.checked==false){
-					if (pat(king.team) || pat(!king.team) $('h1').text("Chess. A play for two brains. Pat!!!.");
+					if (pat(0) || pat(1)) $('h1').text("Chess. A play for two brains. Pat!!!.");
 				}
 					movesObj[moves] = new Moves(moves, teams, 1, examFrom, exam); 
 					movesObj[moves].from = 1;
@@ -630,18 +630,16 @@ function pat(team) {
 		if (figs[i].team == team) { 
 		x = figs[i].xy[0];
 		y = figs[i].xy[1];
-		xyt = [x, y + 1, x + 1, y + 1, x + 1, y, x + 1, y - 1, x, y - 1, x - 1, y - 1, x - 1, y, x - 1, y + 1];
 		
-			for(var j = 0; j < 7; j++) {
-				if ((0 < xyt[2 * j] && xyt[2 * j] < 9) && (0 < xyt[2 * j + 1] && xyt[2 * j + 1] < 9)) {
-					figAbilityToMove.xy[0] = xyt[2 * j];
-					figAbilityToMove.xy[1] = xyt[2 * j + 1];				
+		
+					figAbilityToMove.xy[0] = x;
+					figAbilityToMove.xy[1] = y;				
 					figAbilityToMove.id = figs[i].id;
 					figAbilityToMove.team = figs[i].team;
-					if(ifMate(figAbilityToMove))return false;
-				}
+					if( figs[i].alive && ifMate(figAbilityToMove))return false;
+				
 			}
 	    }
-	}
+	
 	return true;	
 }
