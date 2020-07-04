@@ -273,9 +273,7 @@ for (var i = 0; i < buttons.length; i++) {
 					else king.checked = false;
 				}
 				
-				if(king.checked==false){
-					if (pat(0) || pat(1)) $('h1').text("Chess. A play for two brains. Pat!!!.");
-				}
+				//
 					movesObj[moves] = new Moves(moves, teams, 1, examFrom, exam); 
 					movesObj[moves].from = 1;
 					if (moves<35) {
@@ -305,13 +303,22 @@ for (var i = 0; i < buttons.length; i++) {
 							if (ifMate(king) && chekingFigNotToBeat(checkingFig)) {
 
 								$('h1').text("Chess. A play for two brains. Check Mate!!!");
-								$('#options').innerHTML(`<div id="options"><input type="button" value="Play again - press F5. Abort - F10" onclick="location.reload()"></div>`);
+								//$('#options').innerHTML(`<div id="options"><input type="button" value="Play again - press F5. Abort - F10" onclick="location.reload()"></div>`);
+								var soundMat;
+								soundMat = new Audio("/xampp/htdocs/js learn/chess3/misc/mat.mp3");
+								soundMat.play();
+								sleep(4000);
 								
-								
-								//sleep(4000);
 								//location.reload();
 							}
-						}	
+						}
+						if(king.checked==false){
+					    if (pat(0) || pat(1)) { $('h1').text("Chess. A play for two brains. Pat!");
+						var soundMat;
+						soundMat = new Audio("/xampp/htdocs/js learn/chess3/misc/mat.mp3");
+						soundMat.play();
+						}
+				}
 				
                 } //end of inner validation block
  					
@@ -382,6 +389,8 @@ function chekingFigNotToBeat(checkingFig) {
 
     var fig = new Figure;
 	var xyz = [];
+	var kingxyz = [];
+	var kingIfChecked = new Figure();
 
     for (var i = 0; i < Object.keys(figs).length; i++) {
 	    xyz[0] = figs[i].xy[0];
@@ -390,14 +399,35 @@ function chekingFigNotToBeat(checkingFig) {
         fig.xy[0] = checkingFig.xy[0];
         fig.xy[1] = checkingFig.xy[1];
 
-        if (checkingFig.team != figs[i].team && validMoveNew(fig, xyz)) {
-			figs[i].xy[0] = xyz[0];
-			figs[i].xy[1] = xyz[1];
-			return false;
-		}
+        if (checkingFig.team != fig.team && validMoveNew(fig, xyz)) {
+			
+			if (fig.team) kingIfChecked = findById('KB1');
+			else kingIfChecked = findById('KW1');
+			kingxyz[0] = kingIfChecked.xy[0];
+			kingxyz[1] = kingIfChecked.xy[1];
+			kingIfChecked.xy[0] = checkingFig.xy[0];
+			kingIfChecked.xy[1] = checkingFig.xy[1];
+			
+						if (ifChecked(kingIfChecked)) {
+							figs[i].xy[0] = xyz[0];
+							figs[i].xy[1] = xyz[1];
+							kingIfChecked.xy[0] =kingxyz[0];
+							kingIfChecked.xy[1] =kingxyz[1];
+							
+							return true;
+						}
+						else return false;
+					
+			}
+		
 		figs[i].xy[0] = xyz[0];
 		figs[i].xy[1] = xyz[1];
     }
+	
+	
+	
+	figs[i].xy[0] = xyz[0];
+	figs[i].xy[1] = xyz[1];
     return true;
 }
 
