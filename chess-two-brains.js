@@ -408,7 +408,7 @@ function chekingFigNotToBeat(checkingFig) {
 			kingIfChecked.xy[0] = checkingFig.xy[0];
 			kingIfChecked.xy[1] = checkingFig.xy[1];
 			
-						if (ifChecked(kingIfChecked)) {
+						if (ifChecked(figs,kingIfChecked)) {
 							figs[i].xy[0] = xyz[0];
 							figs[i].xy[1] = xyz[1];
 							kingIfChecked.xy[0] =kingxyz[0];
