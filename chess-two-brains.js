@@ -307,7 +307,7 @@ for (var i = 0; i < buttons.length; i++) {
 								var soundMat;
 								soundMat = new Audio("/xampp/htdocs/js learn/chess3/misc/mat.mp3");
 								soundMat.play();
-								sleep(4000);
+								sleep(1000);
 								
 								//location.reload();
 							}
@@ -401,22 +401,31 @@ function chekingFigNotToBeat(checkingFig) {
 
         if (checkingFig.team != fig.team && validMoveNew(fig, xyz)) {
 			
+			figs[i].xy[0] = fig.xy[0];
+			figs[i].xy[1] = fig.xy[1];
+			checkingFig.xy[0]=0;
+			checkingFig.xy[1]=0;
+			
 			if (fig.team) kingIfChecked = findById('KB1');
 			else kingIfChecked = findById('KW1');
-			kingxyz[0] = kingIfChecked.xy[0];
-			kingxyz[1] = kingIfChecked.xy[1];
-			kingIfChecked.xy[0] = checkingFig.xy[0];
-			kingIfChecked.xy[1] = checkingFig.xy[1];
+			//kingxyz[0] = kingIfChecked.xy[0];
+			//kingxyz[1] = kingIfChecked.xy[1];
+			//kingIfChecked.xy[0] = fig.xy[0];
+			//kingIfChecked.xy[1] = fig.xy[1];
 			
 						if (ifChecked(figs,kingIfChecked)) {
 							figs[i].xy[0] = xyz[0];
 							figs[i].xy[1] = xyz[1];
-							kingIfChecked.xy[0] =kingxyz[0];
-							kingIfChecked.xy[1] =kingxyz[1];
+							//kingIfChecked.xy[0] =kingxyz[0];
+							//kingIfChecked.xy[1] =kingxyz[1];
 							
 							return true;
 						}
-						else return false;
+						else {
+							checkingFig.xy[0]=fig.xy[0];
+							checkingFig.xy[1]=fig.xy[1];
+							return false;
+						}
 					
 			}
 		
