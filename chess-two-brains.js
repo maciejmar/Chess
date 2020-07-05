@@ -437,8 +437,8 @@ function chekingFigNotToBeat(checkingFig) {
 	
 	
 	
-	figs[i].xy[0] = xyz[0];
-	figs[i].xy[1] = xyz[1];
+	//figs[i].xy[0] = xyz[0];
+	//figs[i].xy[1] = xyz[1];
     return true;
 }
 
