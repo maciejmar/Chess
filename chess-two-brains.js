@@ -212,7 +212,7 @@ for (var i = 0; i < buttons.length; i++) {
                     bittenF = figs[objIndex];
                     figs[objIndex].xy = [0, 0];
                     figs[objIndex].alive = false;
-					playSound("/xampp/htdocs/js learn/chess3/misc/beatit.mp3");
+					playSound("misc/beatit.mp3");
 
                 }
                 var regPawn = new RegExp("p..");
@@ -227,7 +227,7 @@ for (var i = 0; i < buttons.length; i++) {
                         findById(objexam.id).id = "qW2";
                         this.innerHTML = newQueenW;
                     }
-				playSound("/xampp/htdocs/js learn/chess3/misc/figchange.mp3");
+				playSound("misc/figchange.mp3");
                 }
 
 			
@@ -247,7 +247,7 @@ for (var i = 0; i < buttons.length; i++) {
 			}  
       
             if (validation) {
-				playSound("/xampp/htdocs/js learn/chess3/misc/move.mp3");
+				playSound("misc/move.mp3");
                 if (figs[i].team)
                     king = figs[findObjByValue("KW1")]; // if Blackes are checking Whites this move
                 else
@@ -262,7 +262,7 @@ for (var i = 0; i < buttons.length; i++) {
                     if (ifChecked(figs, king)) {
 						king.checkedK = true;
                         $('h1').text("Chess. A play for two brains. Blackes move. Check!");
-                        
+                        playSound("misc/pat.mp3");
                     }
 					else king.checked = false;
                 } 
@@ -272,7 +272,7 @@ for (var i = 0; i < buttons.length; i++) {
                     if (ifChecked(figs, king)) {
 						king.checkedK = true;
                         $('h1').text("Chess. A play for two brains. Whites move. Check!");
-                        playSound("/xampp/htdocs/js learn/chess3/misc/pat.mp3");
+                        playSound("misc/pat.mp3");
                     }
 					else king.checked = false;
 				}
@@ -301,15 +301,15 @@ for (var i = 0; i < buttons.length; i++) {
 
 								$('h1').text("Chess. A play for two brains. Check Mate!!!");
 								//$('#options').innerHTML(`<div id="options"><input type="button" value="Play again - press F5. Abort - F10" onclick="location.reload()"></div>`);
-								playSound("/xampp/htdocs/js learn/chess3/misc/mat.mp3");
-								playSound("/xampp/htdocs/js learn/chess3/misc/welcome.mp3");
+								playSound("misc/mat.mp3");
+								playSound("misc/welcome.mp3");
 								
 								//location.reload();
 							}
 						}
 						if(king.checked==false){
 					    if (pat(0) || pat(1)) { $('h1').text("Chess. A play for two brains. Pat!");
-						playSound("/xampp/htdocs/js learn/chess3/misc/pat.mp3");
+						playSound("misc/pat.mp3");
 					
 					}
 					
@@ -326,7 +326,7 @@ for (var i = 0; i < buttons.length; i++) {
 				
 				if(king.checked==false){
 					    if (pat(0) || pat(1)) { $('h1').text("Chess. A play for two brains. Pat!");
-						playSound("/xampp/htdocs/js learn/chess3/misc/pat.mp3");
+						playSound("misc/pat.mp3");
 						
 						}
 				}
@@ -372,7 +372,7 @@ for (var i = 0; i < buttons.length; i++) {
 				clicked.backgroundColor = backColor;
 				$(clicked).css('background', backColor);
 				$(clicked).css('opacity', 1);
-				playSound("/xampp/htdocs/js learn/chess3/misc/mistake.mp3");
+				playSound("misc/mistake.mp3");
 			    
 			  }
 			
