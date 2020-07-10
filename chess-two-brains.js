@@ -280,19 +280,27 @@ for (var i = 0; i < buttons.length; i++) {
 				//
 					movesObj[moves] = new Moves(moves, teams, 1, examFrom, exam); 
 					movesObj[moves].from = 1;
-					if (moves<35) {
+					
 					if (moves==1)  listInBox = "";
+					if (moves<35) {
 					listInBox = listInBox.concat( "<li>"+isBlackOrWhite(moves)+": "+changeToId(examFrom)+":"+changeToId(exam)+"</li>");
 					var htmlMove = $.parseHTML(listInBox);
 					$('#m1').html(htmlMove);
 					}
-					else {
 						if(moves==35) listInBox = "";
-						
+					if (moves>35 && moves<70) {
 					listInBox = listInBox.concat( "<li>"+isBlackOrWhite(moves)+": "+changeToId(examFrom)+":"+changeToId(exam)+"</li>");
 					var htmlMove = $.parseHTML(listInBox);
 						$('#m2').html(htmlMove);
 					}
+					if (moves ==70)	listInBox="";
+					if (moves>70) {
+					listInBox = listInBox.concat( "<li>"+isBlackOrWhite(moves)+": "+changeToId(examFrom)+":"+changeToId(exam)+"</li>");
+					var htmlMove = $.parseHTML(listInBox);
+					$('#m3').html(htmlMove);
+					}
+						
+					
 					
 					
 				
